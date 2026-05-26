@@ -12,24 +12,28 @@ class BackPack
         }
 
         $peticion = explode(" ", $accion);
+        $verbo = $peticion[0];
         $objeto = $peticion[1];
 
-        if (count($peticion) === 2) {
-            $cantidad = 1;
-            if(isset($this->mochila[$objeto])) $this->mochila[$objeto]++;
+        if ($verbo === "equipar"){
+            if (count($peticion) === 2) {
+                $cantidad = 1;
+                if(isset($this->mochila[$objeto])) $this->mochila[$objeto]++;
 
-            else $this->mochila[$objeto] = $cantidad;
-        }
-        else {
-            $cantidad = (int) str_replace("x", "", $peticion[2]);
-            if(isset($this->mochila[$objeto])) $this->mochila[$objeto]++;
-            else $this->mochila[$objeto] = $cantidad;
-        }
+                else $this->mochila[$objeto] = $cantidad;
+            }
+            else {
+                $cantidad = (int) str_replace("x", "", $peticion[2]);
+                if(isset($this->mochila[$objeto])) $this->mochila[$objeto]++;
+                else $this->mochila[$objeto] = $cantidad;
+            }
 
-        $inventarioMostrar = [];
-        foreach ($this->mochila as $nombreItem => $cantidadItem) {
-            $inventarioMostrar[] = $nombreItem . " x" . $cantidadItem;
+            $inventarioMostrar = [];
+            foreach ($this->mochila as $nombreItem => $cantidadItem) {
+                $inventarioMostrar[] = $nombreItem . " x" . $cantidadItem;
+            }
+            return implode(" - ", $inventarioMostrar);
         }
-        return implode(" - ", $inventarioMostrar);
+        else return "desequipar";
     }
 }
