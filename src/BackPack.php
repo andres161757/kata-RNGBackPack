@@ -34,5 +34,13 @@ class BackPack
             }
             return implode(" - ", $inventarioMostrar);
         }
+        else if($verbo === "desequipar"){
+            if (count($peticion) === 2) {
+                if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+            }
+            else {
+                if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+            }
+        };
     }
 }
