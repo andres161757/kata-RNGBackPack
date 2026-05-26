@@ -29,15 +29,6 @@ class BackPackTest extends TestCase
     /**
      * @test
      */
-    function given2ObjectReturnsThatObjectX2()
-    {
-        $backPack = new BackPack();
-        $gestionarBackpack = $backPack->gestionarBackPack("equipar escudo x2");
-        $this->assertEquals("escudo x2", $gestionarBackpack);
-    }
-    /**
-     * @test
-     */
     function givenNObjectReturnsThatObjectXN()
     {
         $backPack = new BackPack();
