@@ -53,7 +53,8 @@ class BackPackTest extends TestCase
         $backPack = new BackPack();
         $gestionarBackpack = $backPack->gestionarBackPack("equipar escudo x2");
         $gestionarBackpack = $backPack->gestionarBackPack("equipar escudo");
-        $this->assertEquals("escudo x3", $gestionarBackpack);
+        $gestionarBackpack = $backPack->gestionarBackPack("equipar espada x2");
+        $this->assertEquals("escudo x3 - espada x2", $gestionarBackpack);
     }
 }
 
