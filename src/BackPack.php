@@ -9,7 +9,8 @@ class BackPack
         if (empty($accion)) {
             return "";
         }
-        if ($accion === "equipar espada") return "espada x1";
-        return "arco x1";
+
+        $objeto = explode(" ", $accion);
+        return $objeto[1] ." x1";
     }
 }
