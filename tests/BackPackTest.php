@@ -85,5 +85,16 @@ class BackPackTest extends TestCase
         $gestionarBackpack = $backPack->gestionarBackPack("desequipar espada x3");
         $this->assertEquals("No tienes suficiente cantidad de ese objeto", $gestionarBackpack);
     }
+    /**
+     * @test
+     */
+    function givenDesequiparSameValorReturnsListWithoutObject()
+    {
+        $backPack = new BackPack();
+        $gestionarBackpack = $backPack->gestionarBackPack("equipar espada x3");
+        $gestionarBackpack = $backPack->gestionarBackPack("equipar arco x3");
+        $gestionarBackpack = $backPack->gestionarBackPack("desequipar espada x3");
+        $this->assertEquals("arco x3", $gestionarBackpack);
+    }
 }
 
