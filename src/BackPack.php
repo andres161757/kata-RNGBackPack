@@ -19,13 +19,7 @@ class BackPack
         if (count($peticion) === 2) $this->mochila[] = $objeto ." x1";
         else $this->mochila[] = $objeto . " " . $cantidad;
 
-        $resultado = "";
-        for ($i = 0; $i < count($this->mochila); $i++) {
-            $resultado .= $this->mochila[$i];
-            if ($i != count($this->mochila) - 1) {
-                $resultado .= " - ";
-            }
-        }
+        $resultado = implode(" - " , $this->mochila);
         return $resultado;
     }
 }
