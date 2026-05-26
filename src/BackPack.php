@@ -11,6 +11,7 @@ class BackPack
         }
 
         $objeto = explode(" ", $accion);
-        return $objeto[1] ." x1";
+        if (count($objeto) === 2) return $objeto[1] ." x1";
+        else return $objeto[1] ." x2";
     }
 }
