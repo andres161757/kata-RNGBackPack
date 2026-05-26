@@ -58,9 +58,7 @@ class BackPack
             return implode(" - ", $inventarioMostrar);
         }
         else if($verbo === "limpiar"){
-            for($i = 0; $i < count($this->mochila); $i++){
-                unset($this->mochila[$i]);
-            }
+            $this->mochila[] = [];
             return "";
         }
     }
