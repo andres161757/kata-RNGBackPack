@@ -10,8 +10,13 @@ class BackPack
             return "";
         }
 
-        $objeto = explode(" ", $accion);
-        if (count($objeto) === 2) return $objeto[1] ." x1";
-        else return $objeto[1] . " " . $objeto[2];
+        $peticion = explode(" ", $accion);
+
+        $verbo = $peticion[0];
+        $objeto = $peticion[1];
+        $cantidad = $peticion[2];
+
+        if (count($peticion) === 2) return $objeto ." x1";
+        else return $objeto . " " . $cantidad;
     }
 }
