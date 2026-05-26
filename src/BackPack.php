@@ -4,7 +4,7 @@ namespace Deg540\CleanCodeKata9;
 
 class BackPack
 {
-    public function backpack(string $accion): string
+    public function gestionarBackPack(string $accion): string
     {
         return "";
     }

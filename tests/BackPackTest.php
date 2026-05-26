@@ -13,8 +13,8 @@ class BackPackTest extends TestCase
      */
     function givenEmptyStringReturnsEmptyString()
     {
-        $backpack = new BackPack();
-        $gestionarBackpack = $backpack->backpack("");
+        $backPack = new BackPack();
+        $gestionarBackpack = $backPack->gestionarBackPack("");
         $this->assertEquals("", $gestionarBackpack);
     }
 }
