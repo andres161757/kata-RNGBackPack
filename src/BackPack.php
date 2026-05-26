@@ -6,6 +6,9 @@ class BackPack
 {
     public function gestionarBackPack(string $accion): string
     {
-        return "";
+        if (empty($accion)) {
+            return "";
+        }
+        return "arco x1";
     }
 }
