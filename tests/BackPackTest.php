@@ -11,11 +11,11 @@ class BackPackTest extends TestCase
     /**
      * @test
      */
-    function givenEmptyStringReturnsEmpryString()
+    function givenEmptyStringReturnsEmptyString()
     {
         $backpack = new BackPack();
         $gestionarBackpack = $backpack->backpack("");
-        assertThat("", $gestionarBackpack);
+        $this->assertEquals("", $gestionarBackpack);
     }
 }
 
