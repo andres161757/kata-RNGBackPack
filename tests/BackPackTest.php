@@ -65,5 +65,15 @@ class BackPackTest extends TestCase
         $gestionarBackpack = $backPack->gestionarBackPack("desequipar espada");
         $this->assertEquals("No tienes ese objeto en la mochila", $gestionarBackpack);
     }
+    /**
+     * @test
+     */
+    function givenDesequiparObject2ReturnsObject1()
+    {
+        $backPack = new BackPack();
+        $gestionarBackpack = $backPack->gestionarBackPack("equipar espada x2");
+        $gestionarBackpack = $backPack->gestionarBackPack("desequipar espada");
+        $this->assertEquals("espada x1", $gestionarBackpack);
+    }
 }
 

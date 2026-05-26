@@ -24,7 +24,7 @@ class BackPack
             }
             else {
                 $cantidad = (int) str_replace("x", "", $peticion[2]);
-                if(isset($this->mochila[$objeto])) $this->mochila[$objeto]++;
+                if(isset($this->mochila[$objeto])) $this->mochila[$objeto] += $cantidad;
                 else $this->mochila[$objeto] = $cantidad;
             }
 
@@ -37,10 +37,22 @@ class BackPack
         else if($verbo === "desequipar"){
             if (count($peticion) === 2) {
                 if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+                else {
+                    $this->mochila[$objeto]--;
+                }
             }
             else {
+                $cantidad = (int) str_replace("x", "", $peticion[2]);
                 if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+                else {
+                    $this->mochila[$objeto] -= $cantidad;
+                }
             }
+            $inventarioMostrar = [];
+            foreach ($this->mochila as $nombreItem => $cantidadItem) {
+                $inventarioMostrar[] = $nombreItem . " x" . $cantidadItem;
+            }
+            return implode(" - ", $inventarioMostrar);
         };
     }
 }
