@@ -37,6 +37,7 @@ class BackPack
         else if($verbo === "desequipar"){
             if (count($peticion) === 2) {
                 if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+                else if($this->mochila[$objeto] === 1) unset($this->mochila[$objeto]);
                 else {
                     $this->mochila[$objeto]--;
                 }
@@ -45,6 +46,7 @@ class BackPack
                 $cantidad = (int) str_replace("x", "", $peticion[2]);
                 if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
                 else if($this->mochila[$objeto] < $cantidad) return "No tienes suficiente cantidad de ese objeto";
+                else if($this->mochila[$objeto] === $cantidad) unset($this->mochila[$objeto]);
                 else {
                     $this->mochila[$objeto] -= $cantidad;
                 }
