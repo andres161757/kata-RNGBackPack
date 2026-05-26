@@ -34,6 +34,5 @@ class BackPack
             }
             return implode(" - ", $inventarioMostrar);
         }
-        else return "desequipar";
     }
 }

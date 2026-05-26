@@ -59,11 +59,11 @@ class BackPackTest extends TestCase
     /**
      * @test
      */
-    function givenDesequiparReturnsDesequipar()
+    function givenDesequiparObjectEmptyReturnsString()
     {
         $backPack = new BackPack();
-        $gestionarBackpack = $backPack->gestionarBackPack("desequipar");
-        $this->assertEquals("desequipar", $gestionarBackpack);
+        $gestionarBackpack = $backPack->gestionarBackPack("desequipar espada");
+        $this->assertEquals("No tienes ese objeto en la mochila", $gestionarBackpack);
     }
 }
 
