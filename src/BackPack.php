@@ -44,6 +44,7 @@ class BackPack
             else {
                 $cantidad = (int) str_replace("x", "", $peticion[2]);
                 if(!isset($this->mochila[$objeto])) return "No tienes ese objeto en la mochila";
+
                 else {
                     $this->mochila[$objeto] -= $cantidad;
                 }
